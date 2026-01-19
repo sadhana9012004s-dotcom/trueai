@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+aiofiles
+python-dotenv
+cloudinary
+motor
+pydantic
+requests
+typing-extensions
+google-generativeai
+svix
