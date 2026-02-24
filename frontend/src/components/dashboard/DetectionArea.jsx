@@ -266,7 +266,7 @@ export default function DetectionArea() {
       </div>
 
       {/* Input Area */}
-      <div className="p-4 bg-background border-t border-border">
+      <div className="p-4 bg-background border-border">
         <div className="max-w-3xl mx-auto">
           {attachedFile && (
             <div className="mb-3 flex items-center justify-between p-3 bg-secondary/50 rounded-lg border border-border">
