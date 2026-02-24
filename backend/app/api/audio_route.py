@@ -4,6 +4,7 @@ import tempfile
 import os
 from bson import ObjectId
 from datetime import datetime
+import pytz
 import uuid
 import shutil
 import gc
@@ -15,7 +16,8 @@ from app.utils.logger import logger
 
 router = APIRouter()
 
-MAX_FILE_SIZE = 50 * 1024 * 1024  # 50 MB in bytes
+MAX_FILE_SIZE = 50 * 1024 * 1024  # 50 MB
+IST = pytz.timezone('Asia/Kolkata')
 
 @router.post("/analyze")
 async def analyze_audio(
@@ -83,7 +85,7 @@ async def analyze_audio(
             new_chat = {
                 "clerk_user_id": clerk_user_id,
                 "user_email": email,
-                "title": f"Audio Analysis {datetime.now().strftime('%H:%M')}",
+                "title": f"Audio Analysis {datetime.now(IST).strftime('%H:%M')}",
                 "created_at": datetime.now(),
                 "messages": [user_message, ai_message]
             }
